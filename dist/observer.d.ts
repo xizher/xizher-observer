@@ -1,6 +1,6 @@
 /** 对象接口 */
-interface IObject<T = any> {
-    [key: string]: T;
+interface IObject {
+    [key: string]: any;
 }
 /** 监听处理函数接口 */
 export interface IObserverHandler {

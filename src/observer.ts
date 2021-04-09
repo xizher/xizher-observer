@@ -1,6 +1,6 @@
 /** 对象接口 */
-interface IObject<T = any> { // eslint-disable-line
-  [key: string] : T
+interface IObject {
+  [key: string] : any // eslint-disable-line
 }
 
 /** 监听处理函数接口 */
