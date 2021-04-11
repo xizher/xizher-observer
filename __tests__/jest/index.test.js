@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 import { test } from '@jest/globals'
-import { TestClass } from '../../dist/observer.test'
+import { TestClass } from '../../dist/esm/observer.test'
 
 test('can on and fire', () => {
   const testObj = new TestClass()

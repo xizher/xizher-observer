@@ -1,6 +1,6 @@
 import Observer from './observer'
 
-type Prop = {
+interface Prop {
   'inc': { value: number },
   'dev': { val: number }
 }
@@ -9,7 +9,7 @@ export interface IProp extends Prop {
   [leu: string]: unknown
 }
 
-export class TestClass<T extends IProp> extends Observer<T> {
+export class TestClass<T extends Prop> extends Observer<T & Prop> {
   private _value = 1
   constructor () {
     super()

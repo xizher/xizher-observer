@@ -1,12 +1,11 @@
 {  
   "compilerOptions": {
     "experimentalDecorators": true,
-    "module": "ES2015",
+    "module": "ESNext",
     "target": "ESNext",
     "sourceMap": false,
     "rootDir":"./src",
-    "outDir":"./dist",
-    "watch":true,
+    "outDir":"./dist/esm",
     "esModuleInterop":true,
     "declaration": true,
     "skipLibCheck": true,

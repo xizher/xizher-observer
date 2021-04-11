@@ -2,10 +2,14 @@
   "name": "@xizher/observer",
   "version": "1.0.3",
   "description": "observer",
-  "main": "dist/index.js",
+  "main": "dist/cmj/index.js",
+  "module": "dist/esm/index.js",
   "scripts": {
     "test": "nodemon --exec npx jest jest",
-    "build": "npx tsc -w"
+    "build:esm": "npx tsc",
+    "build:cmj": "npx tsc --module CommonJS --outDir ./dist/cmj",
+    "build": "npm run build:esm & npm run build:cmj",
+    "build:test": "npx tsc -w"
   },
   "author": "wuxizhe",
   "license": "ISC",
