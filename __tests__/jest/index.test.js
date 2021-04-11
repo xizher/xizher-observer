@@ -2,7 +2,7 @@
 import { test } from '@jest/globals'
 import { TestClass } from '../../dist/esm/observer.test'
 
-test('can on and fire', () => {
+test('能够通过on和fire函数绑定和触发监听事件', () => {
   const testObj = new TestClass()
   let count = 0
   testObj.on('inc', () => {
@@ -19,7 +19,7 @@ test('can on and fire', () => {
   expect(count).toBe(5)
 })
 
-test('can off', () => {
+test('能够通过off方法解除监听函数的绑定状态', () => {
   const testObj = new TestClass()
   let count = 0
   const handler = testObj.on('inc', () => {
@@ -37,7 +37,7 @@ test('can off', () => {
   expect(count).toBe(4)
 })
 
-test('can off all', () => {
+test('能够通过off方法接解除所有监听函数的绑定状态', () => {
   const testObj = new TestClass()
   let count = 0
   testObj.on('inc', () => {
@@ -58,19 +58,18 @@ test('can off all', () => {
   expect(count).toBe(4)
 })
 
-test('off and off again', () => {
+test('能够通过remove方法解除监听函数的绑定状态', () => {
   const testObj = new TestClass()
   let count = 0
   const handler = testObj.on('inc', () => {
     count++
   })
-  testObj.off('inc')
   handler.remove()
   testObj.inc()
   expect(count).toBe(0)
 })
 
-test('on only once', () => {
+test('手动一次性监听方法', () => {
   const testObj = new TestClass()
   let count = 0
   const handler = testObj.on('inc', () => {
@@ -83,7 +82,7 @@ test('on only once', () => {
 })
 
 
-test('on only once', () => {
+test('自动一次性监听方法', () => {
   const testObj = new TestClass()
   let count = 0
   testObj.once('inc', e => {

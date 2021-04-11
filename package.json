@@ -1,7 +1,7 @@
 {
   "name": "@xizher/observer",
   "version": "1.1.0",
-  "description": "observer",
+  "description": "Observer: 监听者",
   "main": "dist/cmj/index.js",
   "module": "dist/esm/index.js",
   "scripts": {
