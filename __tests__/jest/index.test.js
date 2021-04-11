@@ -81,3 +81,16 @@ test('on only once', () => {
   testObj.inc()
   expect(count).toBe(1)
 })
+
+
+test('on only once', () => {
+  const testObj = new TestClass()
+  let count = 0
+  testObj.once('inc', e => {
+    count += e.value
+  })
+  testObj.inc()
+  testObj.inc()
+  testObj.inc()
+  expect(count).toBe(2)
+})

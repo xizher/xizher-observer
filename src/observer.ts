@@ -145,6 +145,23 @@ export class Observer<T extends IObject> {
     }
   }
 
+  /**
+   * 绑定监听函数（仅监听一次）
+   * @param name 监听类型名
+   * @param callback 监听回调函数
+   */
+  public once <K extends keyof T & string> (
+    name: K,
+    callback: IObserverCallback<T[K], K, this>
+  ) : void {
+    const key = name.toLowerCase()
+    const nfn = (...args: unknown[]) => {
+      this.off(key, nfn)
+      callback.apply(this, args)
+    }
+    this.on(key, nfn)
+  }
+
 }
 
 export default Observer
